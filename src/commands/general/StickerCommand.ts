@@ -17,7 +17,7 @@ export default class StickerCommand extends BaseCommand {
         if (checkType === FileTypes.Invalid) {
             await this.whatsappbot.client.reply(
                 message.chatId,
-                "Please send an image, video, or GIF with */sticker* caption or reply it on the file. You can also send an image as document by replying it with */sticker* too.",
+                "Dimohon kirim video, atau foto dengan .sticker mbak, dan video atau fotonya bisa di tag",
                 message.id
             );
             return;
@@ -72,13 +72,13 @@ export default class StickerCommand extends BaseCommand {
             if (Number(message.quotedMsg?.duration ?? message.duration) >= 11) {
                 await this.whatsappbot.client.reply(
                     message.chatId,
-                    "Please use video or GIF with duration under to 10 seconds and try again.",
+                    "Gunakan video atau gif dengan durasi kurang dari 10 detik mbak, mas",
                     message.id
                 );
             } else {
                 const wait = (await this.whatsappbot.client.reply(
                     message.chatId,
-                    "_Generating sticker..._ (sometimes it takes 1 - 5 minutes to process).",
+                    "_Membuat Sticker_ dimohon bersabar.",
                     message.id
                 )) as Message["id"];
                 await this.create(
@@ -154,7 +154,7 @@ export default class StickerCommand extends BaseCommand {
                     {
                         keepScale: true,
                         author: this.whatsappbot.config.botName,
-                        pack: "Sticker Creator"
+                        pack: "D2.0"
                     }
                 );
             } else {
@@ -164,7 +164,7 @@ export default class StickerCommand extends BaseCommand {
                     {
                         keepScale: true,
                         author: this.whatsappbot.config.botName,
-                        pack: "Sticker Creator"
+                        pack: "SMPN 1"
                     }
                 );
             }
@@ -180,7 +180,7 @@ export default class StickerCommand extends BaseCommand {
             );
             await this.whatsappbot.client.reply(
                 message.chatId,
-                `An error occured when trying to create the sticker, ${
+                `Gagal membuat sticker, ${
                     (e as Error).message
                 }.`,
                 message.id
